@@ -44,7 +44,8 @@ const main = async () => {
         })
     )
     // const post =  orm.em.create(Post,{title:'my firste post'});
-    // await orm.em.persistAndFlush(post);
+    // await orm.em.persistAndFlush(post);   
+    
     //    const postts=await orm.em.find(Post,{})
     const apolloSever = new ApolloServer({
         schema: await buildSchema({
