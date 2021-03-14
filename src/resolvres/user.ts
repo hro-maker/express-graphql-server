@@ -114,4 +114,21 @@ async me(
          return {user:(await user)}
 
     }
+
+@Mutation(()=>Boolean)
+async logout(
+    @Ctx(){req,res}:Mycontext
+){
+    
+  return  new Promise(resolve => req.session.destroy(err=>{
+    res.clearCookie('token')
+        if(err){
+            console.log(err)
+            return resolve(false)
+        }
+        resolve(true)
+    }))
+}
+
+
 }
